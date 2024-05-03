@@ -1,0 +1,28 @@
+{
+  "name": "repome",
+  "version": "1.0.0",
+  "description": "CLI tool that creates README.md for your github projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "node",
+    "github",
+    "readme"
+  ],
+  "bin": {
+    "repome": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bibinwithab/repome"
+  },
+  "author": "bibinwithab",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.0.0"
+  }
+}
