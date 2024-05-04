@@ -59,7 +59,7 @@ ${answers.description}
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-- [Questions](#questions)
+- [Author](#author)
 
 ## Installation
 ${answers.installation}
@@ -73,7 +73,7 @@ ${answers.contributing}
 ## License
 This project is licensed under the ${answers.license} License.
 
-## Questions
+## Author
 GitHub: [${answers.githubUsername}](https://github.com/${answers.githubUsername})
 Email: [${answers.email}](mailto:${answers.email})
 `;
