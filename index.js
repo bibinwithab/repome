@@ -3,8 +3,29 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-function askQuestions() {
-  return inquirer.prompt([
+async function askMultiLineInput(message) {
+  const lines = [];
+
+  while (true) {
+    const { line } = await inquirer.prompt([
+      {
+        type: "input",
+        name: "line",
+        message: `${message} (Type 'END' to finish)`,
+      },
+    ]);
+
+    if (line.trim() === "END") {
+      break;
+    }
+    lines.push(line);
+  }
+
+  return lines.join("\n");
+}
+
+async function askQuestions() {
+  const basicAnswers = await inquirer.prompt([
     {
       type: "input",
       name: "projectName",
@@ -14,16 +35,6 @@ function askQuestions() {
       type: "input",
       name: "description",
       message: "Write a short description of your project:",
-    },
-    {
-      type: "input",
-      name: "installation",
-      message: "How to install your project?",
-    },
-    {
-      type: "input",
-      name: "usage",
-      message: "How to use your project?",
     },
     {
       type: "input",
@@ -46,6 +57,12 @@ function askQuestions() {
       message: "What is your email?",
     },
   ]);
+
+  // Ask for multi-line inputs
+  basicAnswers.installation = await askMultiLineInput("Enter an installation step");
+  basicAnswers.usage = await askMultiLineInput("Enter a usage step");
+
+  return basicAnswers;
 }
 
 function generateReadme(answers) {
