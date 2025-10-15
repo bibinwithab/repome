@@ -2,9 +2,23 @@
   "name": "repome",
   "version": "1.0.2",
   "description": "CLI tool that creates README.md for your github projects",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "node src/index.js",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/ tests/",
+    "lint:fix": "eslint src/ tests/ --fix",
+    "format": "prettier --write src/ tests/",
+    "build": "echo 'No build step required for Node.js'",
+    "demo": "node src/index.js",
+    "example": "node test-project.js && node src/index.js",
+    "install-global": "node install.js",
+    "postinstall": "node install.js"
   },
   "keywords": [
     "cli",
@@ -13,7 +27,7 @@
     "readme"
   ],
   "bin": {
-    "repome": "./index.js"
+    "repome": "./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +37,17 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.8.4",
-    "fs": "^0.0.1-security",
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^2.8.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.0",
+    "@types/jest": "^29.0.0",
+    "supertest": "^6.0.0"
   }
 }

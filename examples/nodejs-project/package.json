@@ -1,0 +1,42 @@
+{
+  "name": "example-nodejs-project",
+  "version": "1.0.0",
+  "description": "An example Node.js project for repome",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "dev": "nodemon index.js",
+    "build": "webpack",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "example",
+    "nodejs",
+    "repome"
+  ],
+  "author": "Example Author",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.0",
+    "lodash": "^4.17.21",
+    "axios": "^1.8.4",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "nodemon": "^2.0.0",
+    "webpack": "^5.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^2.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/example-nodejs-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/example/example-nodejs-project/issues"
+  },
+  "homepage": "https://github.com/example/example-nodejs-project#readme"
+}
