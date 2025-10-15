@@ -1,6 +1,6 @@
 {
   "name": "repome",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "CLI tool that creates README.md for your github projects",
   "main": "src/index.js",
   "scripts": {
